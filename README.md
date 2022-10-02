@@ -133,6 +133,7 @@ _For more examples, please refer to the [Documentation](https://example.com)_ --
 ## Roadmap
 
 - [ ] Setup
+  - [x] React
   - [ ] MongoDB
   - [ ] Redux
 - [ ] Front End
