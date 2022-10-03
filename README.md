@@ -146,8 +146,20 @@ _For more examples, please refer to the [Documentation](https://example.com)_ --
   - [ ] Attendance Graphs
   - [ ] Calendar
   - [ ] Comments
+- [ ] Testing
+  - [ ] Create a post
+      - [ ] Images
+  - [ ] User Authentication
+  - [ ] Pagination
+  - [ ] Search
+  - [ ] Details
+  - [ ] Attendance Graphs
+  - [ ] Calendar
+  - [ ] Comments
 - [ ] Deployment
-
+  - [ ] Build Files
+  - [ ] Hosted
+  
 See the [open issues](https://github.com/achoudhury4927/memories-and-motives/issues) for a full list of proposed features (and known issues).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
