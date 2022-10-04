@@ -134,7 +134,7 @@ _For more examples, please refer to the [Documentation](https://example.com)_ --
 
 - [ ] Setup
   - [x] React
-  - [ ] MongoDB
+  - [x] MongoDB
   - [ ] Redux
 - [ ] Front End
   - [ ] Create a post
