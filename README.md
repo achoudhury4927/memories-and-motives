@@ -132,7 +132,7 @@ _For more examples, please refer to the [Documentation](https://example.com)_ --
 
 ## Roadmap
 
-- [ ] Setup
+- [x] Setup
   - [x] React
   - [x] MongoDB
   - [ ] Redux
@@ -148,7 +148,7 @@ _For more examples, please refer to the [Documentation](https://example.com)_ --
   - [ ] Comments
 - [ ] Testing
   - [ ] Create a post
-      - [ ] Images
+    - [ ] Images
   - [ ] User Authentication
   - [ ] Pagination
   - [ ] Search
@@ -159,7 +159,7 @@ _For more examples, please refer to the [Documentation](https://example.com)_ --
 - [ ] Deployment
   - [ ] Build Files
   - [ ] Hosted
-  
+
 See the [open issues](https://github.com/achoudhury4927/memories-and-motives/issues) for a full list of proposed features (and known issues).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
