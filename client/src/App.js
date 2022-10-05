@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { AppBar, Container, Grid, Grow, Typography } from "@material-ui/core";
+import { useDispatch } from "react-redux";
 
+import { getPosts } from "./actions/posts.js";
 import Posts from "./components/Posts/Posts.js";
 import Form from "./components/Form/Form.js";
 import lineup from "./images/lineup.png";
@@ -8,6 +10,11 @@ import styles from "./styles.js";
 
 const App = () => {
   const classes = styles();
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getPosts());
+  }, [dispatch]);
 
   return (
     <Container maxWidth="lg">
@@ -27,7 +34,7 @@ const App = () => {
         <Container>
           <Grid
             container
-            justify="space-between"
+            justifyContent="space-between"
             alignItems="stretch"
             spacing={3}
           >
