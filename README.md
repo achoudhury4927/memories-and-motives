@@ -137,8 +137,8 @@ _For more examples, please refer to the [Documentation](https://example.com)_ --
   - [x] MongoDB
   - [x] Redux
 - [ ] Front End
-  - [ ] Create a post
-    - [ ] Images
+  - [x] Create a post
+    - [x] Images
   - [ ] User Authentication
   - [ ] Pagination
   - [ ] Search

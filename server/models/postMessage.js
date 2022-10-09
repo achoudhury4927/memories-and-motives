@@ -1,24 +1,19 @@
 import mongoose from "mongoose";
 
 const postSchema = mongoose.Schema({
+  creator: String,
   title: String,
   description: String,
-  location: {
-    type: {
-      type: String,
-      enum: ["Point"],
-      required: true,
-    },
-    coordinates: {
-      type: [Number],
-      required: true,
-    },
-  },
+  location: String,
   selectedFile: String,
   tags: [String],
   createdAt: {
     type: Date,
     default: Date.now,
+  },
+  likeCount: {
+    type: Number,
+    default: 0,
   },
 });
 
