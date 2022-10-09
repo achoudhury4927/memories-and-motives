@@ -15,25 +15,24 @@ const App = () => {
 
   useEffect(() => {
     dispatch(getPosts());
-  }, [dispatch]);
+  }, [currentId, dispatch]);
 
   return (
     <Container maxWidth="lg">
       <AppBar className={classes.appBar} position="static" color="inherit">
         <Typography className={classes.heading} variant="h2" align="center">
-          Memories
+          Memory
         </Typography>
         <img
-          className={classes.image}
+          className={`${classes.image} ${classes.smImage}`}
           src={lineup}
           alt="memories"
-          width="153"
-          height="102"
         />
       </AppBar>
       <Grow in>
         <Container>
           <Grid
+            className={classes.mainGridContainer}
             container
             justifyContent="space-between"
             alignItems="stretch"

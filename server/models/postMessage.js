@@ -1,6 +1,7 @@
 import mongoose from "mongoose";
 
 const postSchema = mongoose.Schema({
+  creator: String,
   title: String,
   description: String,
   location: String,
@@ -9,6 +10,10 @@ const postSchema = mongoose.Schema({
   createdAt: {
     type: Date,
     default: Date.now,
+  },
+  likeCount: {
+    type: Number,
+    default: 0,
   },
 });
 
