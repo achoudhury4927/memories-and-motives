@@ -53,10 +53,11 @@ const Form = ({ currentId, setCurrentId }) => {
       <form
         autoComplete="off"
         noValidate
+        data-testid="form"
         className={`${classes.root} ${classes.form}`}
         onSubmit={handlesubmit}
       >
-        <Typography variant="h6">
+        <Typography variant="h6" data-testid="form-heading">
           {currentId ? "Edit" : "Add"} a motive
         </Typography>
         <TextField
@@ -64,6 +65,7 @@ const Form = ({ currentId, setCurrentId }) => {
           variant="outlined"
           label="Creator"
           fullWidth
+          data-testid="creatorTextBox"
           value={postData.creator}
           onChange={(e) =>
             setPostData({ ...postData, creator: e.target.value })
@@ -74,6 +76,7 @@ const Form = ({ currentId, setCurrentId }) => {
           variant="outlined"
           label="Title"
           fullWidth
+          data-testid="titleTextBox"
           value={postData.title}
           onChange={(e) => setPostData({ ...postData, title: e.target.value })}
         />
@@ -82,6 +85,7 @@ const Form = ({ currentId, setCurrentId }) => {
           variant="outlined"
           label="Description"
           fullWidth
+          data-testid="descriptionTextBox"
           value={postData.description}
           onChange={(e) =>
             setPostData({ ...postData, description: e.target.value })
@@ -92,6 +96,7 @@ const Form = ({ currentId, setCurrentId }) => {
           variant="outlined"
           label="Location"
           fullWidth
+          data-testid="locationTextBox"
           value={postData.location}
           onChange={(e) =>
             setPostData({ ...postData, location: e.target.value })
@@ -102,6 +107,7 @@ const Form = ({ currentId, setCurrentId }) => {
           variant="outlined"
           label="Tags"
           fullWidth
+          data-testid="tagsTextBox"
           value={postData.tags}
           onChange={(e) =>
             setPostData({ ...postData, tags: e.target.value.split(",") })
@@ -111,6 +117,7 @@ const Form = ({ currentId, setCurrentId }) => {
           <FileBase
             type="file"
             multiple={false}
+            data-testid="imageFileInput"
             onDone={({ base64 }) =>
               setPostData({ ...postData, selectedFile: base64 })
             }
@@ -123,6 +130,7 @@ const Form = ({ currentId, setCurrentId }) => {
           size="large"
           type="submit"
           fullWidth
+          data-testid="buttonSubmit"
         >
           Submit
         </Button>
@@ -132,6 +140,7 @@ const Form = ({ currentId, setCurrentId }) => {
           size="small"
           onClick={clear}
           fullWidth
+          data-testid="buttonClear"
         >
           Clear
         </Button>
