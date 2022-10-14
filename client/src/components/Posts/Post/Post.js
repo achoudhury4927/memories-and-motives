@@ -21,35 +21,55 @@ const Post = ({ post, setCurrentId }) => {
   const dispatch = useDispatch();
 
   return (
-    <Card className={classes.card}>
+    <Card className={classes.card} data-testid="singlePost">
       <CardMedia
         className={classes.media}
         image={post.selectedFile}
         title={post.title}
+        data-testid="cardMedia"
       />
       <div className={classes.overlay}>
-        <Typography variant="h6">{post.creator}</Typography>
-        <Typography variant="body2">{moment(post.createdAt).from()}</Typography>
+        <Typography variant="h6" data-testid="postCreator">
+          {post.creator}
+        </Typography>
+        <Typography variant="body2" data-testid="postMoment">
+          {moment(post.createdAt).from()}
+        </Typography>
       </div>
       <div className={classes.overlay2}>
         <Button
           style={{ color: "white" }}
           size="small"
+          data-testid="buttonEdit"
           onClick={() => setCurrentId(post._id)}
         >
           <MoreHorizIcon fontSize="medium" />
         </Button>
       </div>
       <div className={classes.details}>
-        <Typography variant="body2" color="textSecondary">
+        <Typography
+          variant="body2"
+          color="textSecondary"
+          data-testid="postTags"
+        >
           {post.tags.map((tag) => `#${tag} `)}
         </Typography>
       </div>
-      <Typography className={classes.title} variant="h5" gutterBottom>
+      <Typography
+        className={classes.title}
+        variant="h5"
+        gutterBottom
+        data-testid="postTitle"
+      >
         {post.title}
       </Typography>
       <CardContent>
-        <Typography variant="body2" color="textSecondary" component="p">
+        <Typography
+          variant="body2"
+          color="textSecondary"
+          component="p"
+          data-testid="postDescription"
+        >
           {post.description}
         </Typography>
       </CardContent>
@@ -57,14 +77,15 @@ const Post = ({ post, setCurrentId }) => {
         <Button
           size="small"
           color="primary"
+          data-testid="buttonLike"
           onClick={() => dispatch(likePost(post._id))}
         >
-          <ThumbUpAltIcon fontSize="small" /> &nbsp; Like &nbsp;{" "}
-          {post.likeCount}
+          <ThumbUpAltIcon fontSize="small" /> &nbsp; Like &nbsp;{post.likeCount}
         </Button>
         <Button
           size="small"
           color="primary"
+          data-testid="buttonDelete"
           onClick={() => dispatch(deletePost(post._id))}
         >
           <DeleteIcon fontSize="small" />
