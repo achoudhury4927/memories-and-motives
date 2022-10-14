@@ -146,7 +146,7 @@ _For more examples, please refer to the [Documentation](https://example.com)_ --
   - [ ] Attendance Graphs
   - [ ] Calendar
   - [ ] Comments
-- [ ] Testing
+- [ ] E2E Testing : ON HOLD AS CYPRESS HAS ISSUES WITH WSL
   - [ ] Create a post
     - [ ] Images
   - [ ] User Authentication
