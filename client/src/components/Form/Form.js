@@ -8,30 +8,34 @@ import { createPost, updatePost } from "../../actions/posts.js";
 
 const Form = ({ currentId, setCurrentId }) => {
   const [postData, setPostData] = useState({
-    creator: "",
     title: "",
     description: "",
     location: "",
     tags: "",
     selectedFile: "",
   });
-  const classes = styles();
+
   const post = useSelector((state) =>
     currentId ? state.posts.find((p) => p._id === currentId) : null
   );
-  const dispatch = useDispatch();
 
   useEffect(() => {
     if (post) setPostData(post);
   }, [post]);
 
-  const handlesubmit = (e) => {
+  const dispatch = useDispatch();
+  const user = JSON.parse(localStorage.getItem("profile"));
+  const classes = styles();
+
+  const handlesubmit = async (e) => {
     e.preventDefault();
 
     if (currentId) {
-      dispatch(updatePost(currentId, postData));
+      dispatch(
+        updatePost(currentId, { ...postData, name: user?.result?.name })
+      );
     } else {
-      dispatch(createPost(postData));
+      dispatch(createPost({ ...postData, name: user?.result?.name }));
     }
     clear();
   };
@@ -39,7 +43,6 @@ const Form = ({ currentId, setCurrentId }) => {
   const clear = () => {
     setCurrentId(null);
     setPostData({
-      creator: "",
       title: "",
       description: "",
       location: "",
@@ -47,6 +50,16 @@ const Form = ({ currentId, setCurrentId }) => {
       selectedFile: "",
     });
   };
+
+  if (!user?.result?.name) {
+    return (
+      <Paper className={classes.paper}>
+        <Typography variant="h6" align="center">
+          Please Sign In to create your own memories.
+        </Typography>
+      </Paper>
+    );
+  }
 
   return (
     <Paper className={classes.paper}>
@@ -60,17 +73,6 @@ const Form = ({ currentId, setCurrentId }) => {
         <Typography variant="h6" data-testid="form-heading">
           {currentId ? "Edit" : "Add"} a motive
         </Typography>
-        <TextField
-          name="creator"
-          variant="outlined"
-          label="Creator"
-          fullWidth
-          data-testid="creatorTextBox"
-          value={postData.creator}
-          onChange={(e) =>
-            setPostData({ ...postData, creator: e.target.value })
-          }
-        />
         <TextField
           name="title"
           variant="outlined"
@@ -86,6 +88,8 @@ const Form = ({ currentId, setCurrentId }) => {
           label="Description"
           fullWidth
           data-testid="descriptionTextBox"
+          multiline
+          minRows={4}
           value={postData.description}
           onChange={(e) =>
             setPostData({ ...postData, description: e.target.value })

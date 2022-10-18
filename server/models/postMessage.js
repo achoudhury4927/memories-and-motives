@@ -2,6 +2,7 @@ import mongoose from "mongoose";
 
 const postSchema = mongoose.Schema({
   creator: String,
+  name: String,
   title: String,
   description: String,
   location: String,
@@ -11,9 +12,9 @@ const postSchema = mongoose.Schema({
     type: Date,
     default: Date.now,
   },
-  likeCount: {
-    type: Number,
-    default: 0,
+  likes: {
+    type: [String],
+    default: [],
   },
 });
 
