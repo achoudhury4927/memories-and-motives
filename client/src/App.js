@@ -1,7 +1,6 @@
 import React from "react";
-import { Container } from "@material-ui/core";
-
 import { BrowserRouter, Switch, Route } from "react-router-dom";
+import { Container } from "@material-ui/core";
 
 import Navbar from "./components/Navbar/Navbar.js";
 import Home from "./components/Home/Home.js";

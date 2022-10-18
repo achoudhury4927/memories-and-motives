@@ -2,27 +2,34 @@ import React, { useEffect, useState } from "react";
 import { Link, useHistory, useLocation } from "react-router-dom";
 import { AppBar, Avatar, Button, Toolbar, Typography } from "@material-ui/core";
 import { useDispatch } from "react-redux";
+import decode from "jwt-decode";
 import * as actionType from "../../constants/actionTypes";
 import styles from "./styles.js";
 import lineup from "../../images/lineup.png";
 
 const Navbar = () => {
-  const classes = styles();
   const [user, setUser] = useState(JSON.parse(localStorage.getItem("profile")));
+
   const location = useLocation();
   const history = useHistory();
   const dispatch = useDispatch();
+  const classes = styles();
 
   useEffect(() => {
     const token = user?.token;
+    if (token) {
+      const decodedToken = decode(token);
+
+      if (decodedToken.exp * 1000 < new Date().getTime()) {
+        logout();
+      }
+    }
     setUser(JSON.parse(localStorage.getItem("profile")));
   }, [location]);
 
   const logout = () => {
     dispatch({ type: actionType.LOGOUT });
-
     history.push("/auth");
-
     setUser(null);
   };
 

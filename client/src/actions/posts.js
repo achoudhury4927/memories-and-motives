@@ -38,9 +38,11 @@ export const deletePost = (currentId) => async (dispatch) => {
 };
 
 export const likePost = (currentId) => async (dispatch) => {
+  const user = JSON.parse(localStorage.getItem("profile"));
+
   try {
-    await api.likePost(currentId);
-    dispatch({ type: UPDATE, payload: currentId });
+    const { data } = await api.likePost(currentId, user?.token);
+    dispatch({ type: UPDATE, payload: data });
   } catch (error) {
     console.log(error);
   }
