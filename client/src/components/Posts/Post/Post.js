@@ -30,7 +30,7 @@ const Post = ({ post, setCurrentId }) => {
       />
       <div className={classes.overlay}>
         <Typography variant="h6" data-testid="postCreator">
-          {post.creator}
+          {post.name}
         </Typography>
         <Typography variant="body2" data-testid="postMoment">
           {moment(post.createdAt).from()}
