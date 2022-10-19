@@ -139,7 +139,7 @@ _For more examples, please refer to the [Documentation](https://example.com)_ --
 - [ ] Front End
   - [x] Create a post
     - [x] Images
-  - [ ] User Authentication
+  - [x] User Authentication
   - [ ] Pagination
   - [ ] Search
   - [ ] Details
