@@ -16,10 +16,17 @@ const Posts = ({ setCurrentId }) => {
       container
       alignItems="stretch"
       spacing={3}
-      data-testid="mainContainerGrid"
     >
       {posts.map((post) => (
-        <Grid key={post._id} item xs={12} sm={6} md={6} data-testid="postsGrid">
+        <Grid
+          key={post._id}
+          item
+          xs={12}
+          sm={12}
+          md={6}
+          lg={3}
+          data-testid="postGrid"
+        >
           {<Post post={post} setCurrentId={setCurrentId} />}
         </Grid>
       ))}
