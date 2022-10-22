@@ -11,12 +11,12 @@ const Form = ({ currentId, setCurrentId }) => {
     title: "",
     description: "",
     location: "",
-    tags: "",
+    tags: [],
     selectedFile: "",
   });
 
   const post = useSelector((state) =>
-    currentId ? state.posts.find((p) => p._id === currentId) : null
+    currentId ? state.posts.posts.find((p) => p._id === currentId) : null
   );
 
   useEffect(() => {
