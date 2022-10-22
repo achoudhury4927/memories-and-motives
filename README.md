@@ -140,8 +140,8 @@ _For more examples, please refer to the [Documentation](https://example.com)_ --
   - [x] Create a post
     - [x] Images
   - [x] User Authentication
-  - [ ] Pagination
-  - [ ] Search
+  - [x] Pagination
+  - [x] Search
   - [ ] Details
   - [ ] Attendance Graphs
   - [ ] Calendar
