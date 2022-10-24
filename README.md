@@ -142,20 +142,18 @@ _For more examples, please refer to the [Documentation](https://example.com)_ --
   - [x] User Authentication
   - [x] Pagination
   - [x] Search
-  - [ ] Details
+  - [ ] Comments in post drilldown
   - [ ] Attendance Graphs
   - [ ] Calendar
-  - [ ] Comments
 - [ ] E2E Testing : ON HOLD AS CYPRESS HAS ISSUES WITH WSL
   - [ ] Create a post
     - [ ] Images
   - [ ] User Authentication
   - [ ] Pagination
   - [ ] Search
-  - [ ] Details
+  - [ ] Comments in post drilldown
   - [ ] Attendance Graphs
   - [ ] Calendar
-  - [ ] Comments
 - [ ] Deployment
   - [ ] Build Files
   - [ ] Hosted
