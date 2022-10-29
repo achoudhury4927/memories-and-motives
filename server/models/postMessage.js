@@ -16,6 +16,10 @@ const postSchema = mongoose.Schema({
     type: [String],
     default: [],
   },
+  comments: {
+    type: [String],
+    default: [],
+  },
 });
 
 const PostMessage = mongoose.model("PostMessage", postSchema);

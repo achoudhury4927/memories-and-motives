@@ -4,6 +4,7 @@ export const UPDATE = "UPDATE";
 export const DELETE = "DELETE";
 export const FETCH_WITH_SEARCH = "FETCH_WITH_SEARCH";
 export const FETCH_POST = "FETCH_POST";
+export const COMMENT = "COMMENT";
 export const AUTH = "AUTH";
 export const LOGOUT = "LOGOUT";
 export const START_LOADING = "START_LOADING";

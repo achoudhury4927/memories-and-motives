@@ -5,6 +5,7 @@ import {
   DELETE,
   FETCH_WITH_SEARCH,
   FETCH_POST,
+  COMMENT,
   START_LOADING,
   END_LOADING,
 } from "../constants/actionTypes";
@@ -89,6 +90,18 @@ export const likePost = (currentId) => async (dispatch) => {
   try {
     const { data } = await api.likePost(currentId, user?.token);
     dispatch({ type: UPDATE, payload: data });
+  } catch (error) {
+    console.log({ message: error.message });
+  }
+};
+
+export const commentPost = (value, id) => async (dispatch) => {
+  try {
+    const { data } = await api.comment(value, id);
+
+    dispatch({ type: COMMENT, payload: data });
+
+    return data.comments;
   } catch (error) {
     console.log({ message: error.message });
   }
