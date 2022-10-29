@@ -4,8 +4,10 @@ import {
   UPDATE,
   DELETE,
   FETCH_WITH_SEARCH,
+  FETCH_POST,
   START_LOADING,
   END_LOADING,
+  COMMENT,
 } from "../constants/actionTypes";
 
 export default (state = { isLoading: true, posts: [] }, action) => {
@@ -23,6 +25,8 @@ export default (state = { isLoading: true, posts: [] }, action) => {
       };
     case FETCH_WITH_SEARCH:
       return { ...state, posts: action.payload };
+    case FETCH_POST:
+      return { ...state, post: action.payload };
     case CREATE:
       return { ...state, posts: [...state.posts, action.payload] };
     case UPDATE:
@@ -31,6 +35,16 @@ export default (state = { isLoading: true, posts: [] }, action) => {
         posts: state.posts.map((post) =>
           post._id === action.payload._id ? action.payload : post
         ),
+      };
+    case COMMENT:
+      return {
+        ...state,
+        posts: state.posts.map((post) => {
+          if (post._id === action.payload._id) {
+            return action.payload;
+          }
+          return post;
+        }),
       };
     case DELETE:
       return {
