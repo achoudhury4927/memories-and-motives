@@ -142,7 +142,7 @@ _For more examples, please refer to the [Documentation](https://example.com)_ --
   - [x] User Authentication
   - [x] Pagination
   - [x] Search
-  - [ ] Comments in post drilldown
+  - [x] Comments in post drilldown
   - [ ] Attendance Graphs
   - [ ] Calendar
 - [ ] E2E Testing : ON HOLD AS CYPRESS HAS ISSUES WITH WSL
